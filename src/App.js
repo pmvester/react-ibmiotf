@@ -3,7 +3,11 @@ import './App.css';
 
 var appConfig = require('./AppConfig.json')
 var iotfApp = require('ibmiotf').IotfApplication
+const uuidv4 = require('uuid/v4')
+
 var appClient = new iotfApp(appConfig)
+appClient.id = uuidv4()
+console.log(appClient.id)
 
 function Pressure(props) {
   return (
