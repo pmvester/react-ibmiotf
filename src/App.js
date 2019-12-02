@@ -47,7 +47,8 @@ export default class App extends React.Component {
   componentDidMount() {
     appClient.connect()
     appClient.on('connect', () => {
-      appClient.subscribeToDeviceEvents()
+      appClient.subscribeToDeviceEvents("MV_Barometer","MV_barometer1","pressure")
+      appClient.subscribeToDeviceEvents("MV_Thermometer","MV_thermometer1","temperature")
     });
     appClient.on('deviceEvent', this.onMessage);
   }
